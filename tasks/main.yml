@@ -1,0 +1,17 @@
+---
+- name: Ensure that fapolicyd is installed
+  yum:
+    name: fapolicyd
+    state: installed
+  
+- name: Ensure that fapolicyd is enabled and configured
+  service:
+    name: fapolicyd
+    state: started
+    enabled: yes
+
+- name: Template out the latest trust file
+  template:
+    src: fapolicyd.trust.j2
+    dest: /etc/fapolicyd/fapolicyd.trust
+  notify: update fapolicyd

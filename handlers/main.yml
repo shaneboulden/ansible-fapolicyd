@@ -1,0 +1,3 @@
+---
+- name: update fapolicyd
+  cmd: 'fapolicyd-cli --update'
