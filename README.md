@@ -1,4 +1,4 @@
-Ansible role: fapolicyd
+fapolicyd_role
 =========
 Installs and configures the File Access Policy daemon on Red Hat systems.
 
@@ -12,9 +12,9 @@ None.
 Role Variables
 --------------
 
-This role takes a dictionary of values for trusted applications and updates these on the host. eg;
+This role takes an array `trusted_apps` and updates the `/etc/fapolicyd/fapolicyd.trust` configuration on the host. eg;
 ```
-apps:
+trusted_apps:
  - path: /usr/local/bin/cowsay
    size: 2195456
    checksum: 8adee1c9ecc498d2e136c51fc553b9ecabf0bfff46335f0b9010c821580c022f
@@ -32,7 +32,7 @@ Example Playbook
       hosts: all
       become: true
       roles:
-        - { role: shaneboulden.fapolicyd }
+        - { role: shaneboulden.fapolicyd_role }
 
 License
 -------
