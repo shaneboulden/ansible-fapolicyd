@@ -32,7 +32,7 @@ Example Playbook
       hosts: all
       become: true
       roles:
-        - { role: shaneboulden.fapolicyd_role }
+        - { role: shaneboulden.fapolicyd }
 
 License
 -------
