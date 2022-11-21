@@ -1,3 +1,5 @@
 ---
 - name: update fapolicyd
-  command: 'fapolicyd-cli --update'
+  service:
+    name: fapolicyd
+    state: restarted
